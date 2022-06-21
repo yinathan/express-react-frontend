@@ -1,6 +1,24 @@
 import { useState, useEffect } from "react"
+import styled from "styled-components";
 
 export default function Projects({ URL }) {
+
+  const StyledDiv = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+
+    .image {
+      max-height: 300px;
+    }
+
+    .button {
+      height: 30px;
+      width: 100px;
+      margin: 10px;
+    }
+  `;
 
     const [projects, setProjects] = useState(null)
 
@@ -18,16 +36,16 @@ export default function Projects({ URL }) {
     
 const loaded = () => {
   return projects.map((project) => (
-    <div>
+    <StyledDiv>
       <h1>{project.name}</h1>
-      <img src={project.image} />
+      <img src={project.image} className="image"/>
       <a href={project.git}>
-        <button>Github</button>
+        <button className="button">Github</button>
       </a>
       <a href={project.live}>
-        <button>live site</button>
+        <button className="button">Live Site</button>
       </a>
-    </div>
+    </StyledDiv>
   ));
 };
     

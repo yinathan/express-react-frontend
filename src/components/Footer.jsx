@@ -1,6 +1,8 @@
 
 export default function Footer(props) {
     return(
-        <h1>Footer</h1>
+        <div>
+            <h3>This site was created by Nathan Yi</h3>
+        </div>
     )
 }
